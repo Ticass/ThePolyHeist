@@ -18,18 +18,19 @@ public class SMG : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0)){
             Shoot();
+            GunShot.Play();
         }
     }
 
 
 
     void Shoot(){
+        GunShot.Play();
         RaycastHit hit;
         if (Physics.Raycast(ShootPos.transform.position, ShootPos.transform.forward, out hit, range)){
             Debug.Log(hit.transform.name);
 
             Target target = hit.transform.GetComponent<Target>();
-            GunShot.Play();
             if (target != null){
                 target.TakeDamage(10);
             }
