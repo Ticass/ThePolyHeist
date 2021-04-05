@@ -5,8 +5,6 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
 
-    [Header("Bindings")]
-    public KeyCode jumpKey = KeyCode.Space;
 
     [Header("Settings")]
     public CharacterController controller;
