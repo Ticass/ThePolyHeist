@@ -14,6 +14,7 @@ public class Target : MonoBehaviour
 
 
     void Die(){
+        epxlosion.Play();
         Destroy(gameObject);
     }
 }

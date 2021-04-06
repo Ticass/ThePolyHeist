@@ -6,6 +6,7 @@ public class AimDownSights : MonoBehaviour
 {
     public Camera NormalCam;
     public Camera ADSCam;
+    public Transform playerGun;
 
 
     // Start is called before the first frame update
@@ -24,7 +25,8 @@ public class AimDownSights : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Mouse1) && !isAiming){
             Debug.Log("aiming Down sights");
             ADSCam.enabled = true;
-            
+            float mouseY = Input.GetAxis("Mouse Y") * 400 * Time.deltaTime;
+            playerGun.Rotate(Vector3.up * mouseY);
         }
         
          if(Input.GetKeyDown(KeyCode.Mouse1) && isAiming){
