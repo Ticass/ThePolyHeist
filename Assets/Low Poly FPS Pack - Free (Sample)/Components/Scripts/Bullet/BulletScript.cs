@@ -55,6 +55,14 @@ public class BulletScript : MonoBehaviour {
 				//Add Damage to the target
 				if (target != null)
 					target.TakeDamage(10);
+
+		CameraDie cctv = collision.transform.GetComponent<CameraDie>();
+
+			if (cctv != null){
+				cctv.TakeDamage(10);
+				Debug.Log("cctv hit");
+			}
+				
 			
 	}
 
