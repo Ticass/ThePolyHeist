@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 2366043224893475365}
   - component: {fileID: 2366043224890112787}
   - component: {fileID: 2366043224891195623}
-  - component: {fileID: 2366043224151128008}
   - component: {fileID: 2366043224893140188}
   m_Layer: 0
   m_Name: SM_Env_Wall_Glass_DoorFrame_Panels_01
@@ -84,21 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &2366043224151128008
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2366043224893140189}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e3b51250f7aa2c8429c5eee88682f182, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  drill: {fileID: 1076458129315493507, guid: 8270cc4705a071347b73edf0645df459, type: 3}
-  door: {fileID: 2366043224893140189}
-  drillTime: 30
 --- !u!135 &2366043224893140188
 SphereCollider:
   m_ObjectHideFlags: 0
