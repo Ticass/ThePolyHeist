@@ -8,6 +8,7 @@ public class MouseLook : MonoBehaviour
     public Transform Playerbody;
     public Transform PlayerGun;
 
+
     [Header("Settings")]
     public float mouseSensitivity = 400f;
 
@@ -28,6 +29,5 @@ public class MouseLook : MonoBehaviour
         xRotation = Mathf.Clamp(xRotation, -90f, 90f);
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         Playerbody.Rotate(Vector3.up * mouseX);
-        PlayerGun.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
     }
 }
