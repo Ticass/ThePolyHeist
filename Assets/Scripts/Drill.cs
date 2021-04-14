@@ -13,6 +13,7 @@ public class Drill : MonoBehaviour
     public float drillTime = 30.0f;
     bool isDrilling;
     bool drillSpawned;
+    bool isLookingAtDoor;
     private TextMesh drillText;
     private GameObject DrillClone;
     void Start()
@@ -29,24 +30,35 @@ public class Drill : MonoBehaviour
 
     void CheckDrillDoor(){
 
+        if (isLookingAtDoor){
+            interaction.enabled = true;
+        } else {
+            interaction.enabled = false;
+        }
+
          Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
         RaycastHit hit;
        if (Physics.Raycast(ray, out hit)){
            if (hit.transform.tag == "Sawable" || hit.collider.tag == "Sawable"){
+               isLookingAtDoor = true;
                 interaction.text = "Press [E] to place drill";
                 interaction.enabled = true;
                 if (Input.GetKeyDown(KeyCode.E) && !isDrilling && !drillSpawned){
                     isDrilling = true;
-                if (isDrilling){
-                     DrillClone = Instantiate(drill, new Vector3(16.719f, 0.5f, 4.4f), Quaternion.identity);
-                     drillText = Instantiate(drillTimer, new Vector3(21.15519f, 2.664242f, 0.586f), Quaternion.Euler(0f, -180f, 0f));
-                    drillSpawned = true;
-                }
-                
-            }
+                        if (isDrilling){
+                            DrillClone = Instantiate(drill, new Vector3(16.719f, 0.5f, 4.4f), Quaternion.identity);
+                            drillText = Instantiate(drillTimer, new Vector3(21.15519f, 2.664242f, 0.586f), Quaternion.Euler(0f, -180f, 0f));
+                            drillSpawned = true;
+                        }
+                 }
+           } else {
+               interaction.enabled = false;
+               isLookingAtDoor = false;
            }
      
-        } 
+        } else {
+            interaction.enabled = false;
+        }
 
 
       
